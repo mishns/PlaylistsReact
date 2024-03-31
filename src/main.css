@@ -1,0 +1,67 @@
+:global :root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --color-text: rgb(72, 111, 184);
+}
+
+:global html {
+  margin-right: calc(-1 * (100vw - 100%));
+  overflow-x: hidden;
+}
+
+:global body {
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+:global #root {
+  margin: 0 auto;
+  padding: 1rem;
+
+  min-width: 320px;
+  max-width: 1000px;
+  width: 100%;
+
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+:global * {
+  box-sizing: border-box;
+}
+
+:global a {
+  text-decoration: none;
+}
+
+:global hr {
+	width: 100%;
+}
+
+:global h1,
+:global h2,
+:global h3 {
+  margin: 0;
+  font-weight: normal;
+}
+
+:global ul,
+:global ol {
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+  list-style: none;
+}

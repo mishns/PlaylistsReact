@@ -1,0 +1,28 @@
+.UsersPage {
+	color: bisque;
+}
+
+.Users {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.Users a {
+	color: cornflowerblue;
+	cursor: pointer;
+}
+
+.Users a:hover {
+	color: rgb(72, 111, 184);
+}
+
+.Users button {
+	text-align: left;
+	color: cornflowerblue;
+}
+
+.Users button:hover {
+	text-align: left;
+	color : var(--color-text);
+}

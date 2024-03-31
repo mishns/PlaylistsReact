@@ -1,0 +1,12 @@
+.PlaylistPage {
+  color: var(--color-text);
+}
+
+.PlaylistName {
+  margin: 20px;
+	color: rgb(185, 173, 156);
+}
+
+.Playlist {
+  list-style: none;
+}

@@ -1,0 +1,85 @@
+.Section {
+	flex-grow: 1;
+	display: flex;
+	gap: 30px;
+}
+
+.Content {
+	flex-grow: 1;
+}
+
+/* NavMenu */
+.NavMenu {
+	width: 250px;
+	padding: 10px;
+	flex-shrink: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	border: 1px solid whitesmoke;
+}
+
+.NavMenu a,
+.NavMenu button {
+	text-align: left;
+	color: antiquewhite;
+}
+
+.NavMenu a:hover,
+.NavMenu button:hover {
+	color: rgb(185, 173, 156);
+}
+
+.NavMenu a.Active {
+	text-decoration: underline;
+}
+
+.Buttons {
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+}
+
+.Buttons button {
+	padding: 5px 10px;
+	flex-grow: 1;
+}
+
+/* HEADER */
+.Header {
+	margin-bottom: 20px;
+	width: 100%;
+	padding: 10px;
+
+	color: transparent;
+	text-align: right;
+
+	border: 1px solid whitesmoke;
+}
+
+.Header a {
+	color: antiquewhite;
+}
+
+.Header a:hover {
+	color: rgb(185, 173, 156);
+}
+
+/* FOOTER */
+.Footer {
+	margin-top: 20px;
+	width: 100%;
+	padding: 10px;
+
+	text-align: right;
+
+	border: 1px solid whitesmoke;
+}
+
+.Footer a {
+	color: antiquewhite;
+}
+
+.Footer a:hover {
+	color: rgb(185, 173, 156);
+}
