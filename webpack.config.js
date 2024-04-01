@@ -15,6 +15,7 @@ module.exports = {
     filename: "bundle.js",
     assetModuleFilename: "assets/[hash][ext][query]",
     clean: true,
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -71,6 +72,7 @@ module.exports = {
   },
   devServer: {
     hot: true,
+    historyApiFallback: true,
   },
   devtool: "source-map",
 };
