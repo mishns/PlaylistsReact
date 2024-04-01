@@ -1,11 +1,12 @@
 import { default as React, FC } from "react";
-import { useParams } from "react-router-dom";
-import { USERS } from "../../data";
+import { Link, useParams } from "react-router-dom";
+import { USERS } from "@data/users";
 import styles from "./UserInfoPage.css";
 
 export const UserInfoPage: FC = () => {
   const { userId } = useParams();
   const user = USERS[Number(userId)];
+  const { playlist } = user;
 
   if (!user) {
     return (
@@ -28,7 +29,13 @@ export const UserInfoPage: FC = () => {
         <p>{user.email}</p>
         <img src={user.avatar} alt="" width={200} height={200} />
         <p>{user.fullName}</p>
-        <p>{user.bio}</p>
+        <p className={styles.Bio}>{user.bio}</p>
+        {playlist && (
+          <span>
+            playlist:{" "}
+            {<Link to={`/playlists/${playlist.id}`}>{playlist.name}</Link>}
+          </span>
+        )}
       </div>
     </div>
   );
