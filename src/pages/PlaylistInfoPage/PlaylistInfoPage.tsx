@@ -15,7 +15,7 @@ export const PlaylistInfoPage: FC = () => {
   return (
     <div className={styles.PlaylistPage}>
       <h2 className={styles.PlaylistName}>{name}</h2>
-      <Link to={`/playlists/?genre=${genre}`}>Жанр: {genre}</Link>
+      <Link to={`/playlists/?listGenre=${genre}`}>Жанр: {genre}</Link>
       <ul className={styles.Playlist}>
         {songs.map((song: string, index: number) => (
           <li className={styles.PlaylistSong} key={index}>
