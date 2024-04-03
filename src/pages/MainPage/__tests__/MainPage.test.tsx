@@ -8,7 +8,7 @@ const component = (props = {}) => {
   return render(<MainPage {...defaultProps} {...props} />);
 };
 
-describe("Проверка компонента MainPage", async () => {
+describe("Проверка компонента MainPage", () => {
   test("Проверка корректного рендера главной страницы", () => {
     const { container } = component();
     expect(container).toMatchSnapshot();

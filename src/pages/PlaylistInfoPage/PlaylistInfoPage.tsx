@@ -8,15 +8,19 @@ export const PlaylistInfoPage: FC = () => {
   const playlistData = PLAYLISTS.find(list => list.id === Number(id))!;
 
   if (!playlistData) {
-    return <span>Такого списка нет</span>;
+    return <span data-testid="noPlaylistMessage">Такого списка нет</span>;
   }
 
   const { genre, name, songs } = playlistData;
   return (
     <div className={styles.PlaylistPage}>
-      <h2 className={styles.PlaylistName}>{name}</h2>
-      <Link to={`/playlists/?listGenre=${genre}`}>Жанр: {genre}</Link>
-      <ul className={styles.Playlist}>
+      <h2 className={styles.PlaylistName} data-testid="playlistName">
+        {name}
+      </h2>
+      <Link to={`/playlists/?listGenre=${genre}`} data-testid="playlistGenre">
+        Жанр: {genre}
+      </Link>
+      <ul className={styles.Playlist} data-testid="playlistList">
         {songs.map((song: string, index: number) => (
           <li className={styles.PlaylistSong} key={index}>
             - {song}
