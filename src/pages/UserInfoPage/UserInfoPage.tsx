@@ -6,7 +6,6 @@ import styles from "./UserInfoPage.css";
 export const UserInfoPage: FC = () => {
   const { userId } = useParams();
   const user = USERS[Number(userId)];
-  const { playlist } = user;
 
   if (!user) {
     return (
@@ -14,26 +13,34 @@ export const UserInfoPage: FC = () => {
         <h2>UserInfoPage</h2>
 
         <div className={styles.Users}>
-          <p>пользователя таким userId нет</p>
+          <p data-testid="NoUserMessage">Пользователя c таким id нет</p>
         </div>
       </div>
     );
   }
 
+  const { playlist } = user;
   return (
     <div className={styles.UserInfoPage}>
       <h2>UserInfoPage</h2>
 
       <div className={styles.Users}>
         <p>{user.jobTitle}</p>
-        <p>{user.email}</p>
+        <p data-testid="UserEmail">{user.email}</p>
         <img src={user.avatar} alt="" width={200} height={200} />
-        <p>{user.fullName}</p>
+        <p data-testid="UserName">{user.fullName}</p>
         <p className={styles.Bio}>{user.bio}</p>
         {playlist && (
           <span>
             playlist:{" "}
-            {<Link to={`/playlists/${playlist.id}`}>{playlist.name}</Link>}
+            {
+              <Link
+                to={`/playlists/${playlist.id}`}
+                data-testid="UserPlaylistLink"
+              >
+                {playlist.name}
+              </Link>
+            }
           </span>
         )}
       </div>

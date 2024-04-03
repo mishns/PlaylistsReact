@@ -1,4 +1,3 @@
-import type { Config } from "jest";
 import { pathsToModuleNameMapper } from "ts-jest";
 import { compilerOptions } from "./tsconfig.json";
 import type { JestConfigWithTsJest } from "ts-jest";

@@ -4,15 +4,6 @@ import { render } from "@testing-library/react";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import "@testing-library/jest-dom";
 
-const renderComponent = (route: string) =>
-  render(
-    <MemoryRouter initialEntries={[route]}>
-      <Routes>
-        <Route path="/playlists/:id" element={<PlaylistInfoPage />} />
-      </Routes>
-    </MemoryRouter>,
-  );
-
 const testPlaylist = {
   id: 6,
   genre: "Folk",
@@ -42,6 +33,14 @@ const testPlaylist = {
 };
 
 const route: string = "/playlists/";
+const renderComponent = (route: string) =>
+  render(
+    <MemoryRouter initialEntries={[route]}>
+      <Routes>
+        <Route path="/playlists/:id" element={<PlaylistInfoPage />} />
+      </Routes>
+    </MemoryRouter>,
+  );
 
 describe("Проверка рендера страницы плейлиста в зависимости от query params", () => {
   const badIndex: string = "-1";
