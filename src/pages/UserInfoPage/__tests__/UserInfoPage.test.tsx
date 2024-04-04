@@ -27,13 +27,13 @@ const renderComponent = (route: string) =>
 
 describe("Проверка корректного рендера страницы пользователя в зависимости от query params", () => {
   const badIndex: string = "-1";
-  test("В случае отсутствия пользователя в базе, отображается текст об отсутствии пользователя", () => {
+  test("В случае отсутствия пользователя в базе, отображается текст об отсутствии пользователя", async () => {
     const { getByTestId } = renderComponent(route + badIndex);
     const message = getByTestId("NoUserMessage");
     expect(message.textContent).toEqual("Пользователя c таким id нет");
   });
 
-  test("В случае, если пользователь есть в базе, отображаемые данные соответствуют данным в базе", () => {
+  test("В случае, если пользователь есть в базе, отображаемые данные соответствуют данным в базе", async () => {
     const { getByTestId } = renderComponent(route + testUser.id.toString());
     const email = getByTestId("UserEmail");
     const name = getByTestId("UserName");

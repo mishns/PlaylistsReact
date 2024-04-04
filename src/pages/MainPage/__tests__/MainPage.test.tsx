@@ -9,7 +9,7 @@ const component = (props = {}) => {
 };
 
 describe("Проверка компонента MainPage", () => {
-  test("Проверка корректного рендера главной страницы", () => {
+  test("Проверка корректного рендера главной страницы", async () => {
     const { container } = component();
     expect(container).toMatchSnapshot();
   });

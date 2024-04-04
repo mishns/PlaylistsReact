@@ -24,9 +24,9 @@ const renderComponent = () =>
     </MemoryRouter>,
   );
 
-test("UsersPage корректно вызывает setSearchParams", () => {
+test("UsersPage корректно вызывает setSearchParams", async () => {
   const { getByTestId } = renderComponent();
   const paramInput = getByTestId("SearchNameInput");
-  fireEvent.change(paramInput, { target: { value: "abraham" } });
+  await fireEvent.change(paramInput, { target: { value: "abraham" } });
   expect(setSearchParamsMock).toHaveBeenCalledWith({ searchName: "abraham" });
 });
