@@ -10,6 +10,8 @@ export const PlaylistsPage: FC = () => {
 
   function handleGenreSearch(event: React.ChangeEvent<HTMLInputElement>): void {
     searchParams.set("listGenre", event.target.value);
+    console.log(searchParams.toString());
+
     setSearchParams(searchParams);
   }
   function handleNameSearch(event: React.ChangeEvent<HTMLInputElement>): void {
@@ -29,12 +31,20 @@ export const PlaylistsPage: FC = () => {
 
       <div className={styles.GenreSearch}>
         <span>Введите жанр</span>
-        <input type="text" onChange={handleGenreSearch} />
+        <input
+          type="text"
+          onChange={handleGenreSearch}
+          data-testid="genreInput"
+        />
       </div>
 
       <div className={styles.NameSearch}>
         <span>Введите название</span>
-        <input type="text" onChange={handleNameSearch} />
+        <input
+          type="text"
+          onChange={handleNameSearch}
+          data-testid="nameInput"
+        />
       </div>
 
       <ul className={styles.Playlists}>

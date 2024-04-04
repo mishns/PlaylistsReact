@@ -24,7 +24,7 @@ const renderComponent = () =>
     </MemoryRouter>,
   );
 
-test("UsersPage корректно вызывает setSearchParams", async () => {
+test("При вводе имени в поле поиска происходит корректный вызов setSearchParams", async () => {
   const { getByTestId } = renderComponent();
   const paramInput = getByTestId("SearchNameInput");
   await fireEvent.change(paramInput, { target: { value: "abraham" } });
